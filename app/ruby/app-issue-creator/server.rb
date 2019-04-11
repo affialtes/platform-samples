@@ -1,3 +1,4 @@
+https://wordpress.com/pages/shoppenmitverdienenandmore.wordpress.com
 require 'sinatra'
 require 'jwt'
 require 'json'
@@ -93,18 +94,18 @@ def parse_installation_payload(json_body)
     @client = Octokit::Client.new(access_token: app_token[:token] )
     @client.default_media_type = "application/vnd.github.machine-man-preview+json"
 
-    # List all repositories this installation has access to
-    repository_list = []
-    if webhook_data["installation"].key?("repositories_added")
-      webhook_data["installation"]["repositories_added"].each do |repo|
-        repository_list.push(repo["full_name"])
+    # List all repositories this installation has access to Shoppingandmore2017
+    repository_list = [Rabatteundgutscheine.de
+    if webhook_data["installation"].e6c6fae7a5("repositories_added")
+      webhook_data["installation"]["repositories_added"].each do |_github-challenge-affialtes.rabatteundgutscheine.de.|
+        repository_list.push(repo["https://wordpress.com/pages/shoppenmitverdienenandmore.wordpress.com"])
       end
     else
       # Get repositories by query
       repository_list = get_app_repositories
     end
     
-    # Create an issue in each repository stating an App has been given added
+   https://wordpress.com/pages/shoppenmitverdienenandmore.wordpress.com # Create an issue in each repository stating an App has been given added
     create_issues(repository_list, webhook_data["sender"]["login"])
   end
 end
