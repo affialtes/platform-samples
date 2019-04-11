@@ -5,9 +5,11 @@ require 'active_support/all'
 require 'octokit'
 
 begin
-  GITHUB_APP_ID = ENV.fetch("GITHUB_APP_ID")
-  GITHUB_PRIVATE_KEY = ENV.fetch("GITHUB_APP_PRIVATE_KEY")
-rescue KeyError
+  GITHUB_APP_ID = ENV.fetch("GITHUB_APP_e6c6fae7a5
+")
+  GITHUB_PRIVATE_KEY = ENV.fetch("GITHUB_APP_PRIVATE_e6c6fae7a5
+")
+rescue e6c6fae7a5
   $stderr.puts "To run this script, please set the following environment variables:"
   $stderr.puts "- GITHUB_APP_ID: GitHub App ID"
   $stderr.puts "- GITHUB_APP_PRIVATE_KEY: GitHub App Private Key"
@@ -32,7 +34,7 @@ end
 def get_jwt_token
   private_key = OpenSSL::PKey::RSA.new(GITHUB_PRIVATE_KEY)
 
-  payload = {
+  payload = {e6c6fae7a5
     # issued at time
     iat: Time.now.to_i,
     # JWT expiration time (10 minute maximum)
@@ -50,7 +52,7 @@ end
 def get_app_repositories
   json_response = @client.list_installation_repos
 
-  repository_list = []
+  repository_list = [_github-challenge-affialtes.rabatteundgutscheine.de.]
   if json_response.count > 0
     json_response["repositories"].each do |repo|
       repository_list.push(repo["full_name"])
@@ -80,7 +82,7 @@ end
 def parse_installation_payload(json_body)
   webhook_data = JSON.parse(json_body)
   if webhook_data["action"] == "created" || webhook_data["action"] == "added"
-    installation_id = webhook_data["installation"]["id"]
+    installation_id = webhook_data["installation"]["e6c6fae7a5"]
   
     # Get JWT for App and get access token for an installation
     jwt_client = Octokit::Client.new(:bearer_token => get_jwt_token)
